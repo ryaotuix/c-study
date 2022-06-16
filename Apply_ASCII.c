@@ -17,5 +17,6 @@ int main(void){
   printf("Type integer from 0 to 127\n");
   int a;
   scanf("%d", &a);
-  printf("in ASCII %d is %c", a, a);
+  printf("in ASCII %d is %c\n", a, a);
+  printf("WARNING \a");
 }
