@@ -31,6 +31,8 @@ int main(void) {
 
   printf("\n");
 
-
+  printf("%-8s %-20s %5s\n", "Name", "Major", "Year");
+  printf("%-8s %-20s %5s\n", "Harrison", "Data Science", "Sophomore");
+  printf("%-8s %-20s %5s\n", "Sam", "Computer Science", "Sophomore");
 
 }
