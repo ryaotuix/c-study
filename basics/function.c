@@ -72,6 +72,7 @@ int main(void)
   do {
     printf("Will you change C to F? y/n\n");
     scanf("%c", &answer); // store answer
+    fflush(stdin); // WE MUST FLUSH scanf SO IT DOESN"T READ WRONG VALUE
 
     switch (answer) {
       case 'Y':
@@ -79,6 +80,7 @@ int main(void)
         printf("What is temperature in Celsius?\n");
         double c,f;
         scanf("%lf", &c);
+        fflush(stdin);
         f = CtoF(c);
         printf("Current temperature in F is %f\n", f);
         break;
@@ -86,11 +88,13 @@ int main(void)
       case 'N': case 'n':
         printf("Do you want to change F to C then? y/n\n");
         scanf("%c", &answer);
+        fflush(stdin);
 
         if (answer == 'y') {
           double c,f;
           printf("What is temperature in F?\n");
           scanf("%lf", &f);
+          fflush(stdin);
           c = FtoC(f);
           printf("Current temperature in C is %f\n", c);
 
