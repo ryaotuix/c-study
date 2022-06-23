@@ -71,7 +71,7 @@ int main(void)
   char answer;
   do {
     printf("Will you change C to F? y/n\n");
-    scanf("%c", &answer); // store answer
+    scanf("%1c", &answer); // store answer
     fflush(stdin); // WE MUST FLUSH scanf SO IT DOESN"T READ WRONG VALUE
 
     switch (answer) {
@@ -87,7 +87,7 @@ int main(void)
 
       case 'N': case 'n':
         printf("Do you want to change F to C then? y/n\n");
-        scanf("%c", &answer);
+        scanf("%1c", &answer);
         fflush(stdin);
 
         if (answer == 'y') {
