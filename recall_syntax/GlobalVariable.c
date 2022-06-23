@@ -4,6 +4,7 @@ int num; // Global Variable automatically initiated as 0
 
 int main(void)
 {
+  int num = 3; // local variable is prior than global variable
   printf("num: %d \n", num);
   Add(3);
   printf("num: %d \n", num);
