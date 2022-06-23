@@ -1,13 +1,22 @@
 /* Calculate LeastCommonMultiple and GreatestCommonDivisor */
 #include <stdio.h>
 
-int simpleGCD(int a, int b);
+int GCD(int a, int b);
 
 int LCM(int a, int b)
 {
-
+  return a*b/(GCD(a,b));
 }
 
+int GCD(int a, int b)
+{
+    int r = a % b;
+    if (r == 0) {
+      return b;
+    }
+    return GCD(b, r);
+}
+/*
 int GCD(int a, int b)
 {
   int gcd;
@@ -34,7 +43,7 @@ int GCD(int a, int b)
 }
 
 
-int simpleGCD(int a, int b)
+int simpleGCD(int a, int b) // initialize later
 {
   if (a<=b)
   {
@@ -49,12 +58,17 @@ int simpleGCD(int a, int b)
   else
     simpleGCD(b,a);
 }
+*/
 
 int main(void)
 {
   int a, b;
+
   printf("Type two integers: ");
   scanf("%d %d", &a, &b);
+
   int gcd = GCD(a, b);
-  printf("GCD : %d", gcd);
+  printf("GCD : %d\n", gcd);
+  int lcm = LCM(a, b);
+  printf("LCM : %d", lcm);
 }
