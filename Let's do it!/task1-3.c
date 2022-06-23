@@ -8,7 +8,7 @@ int LCM(int a, int b)
   return a*b/(GCD(a,b));
 }
 
-int GCD(int a, int b)
+int GCD(int a, int b) // THIS IS GENIUS
 {
     int r = a % b;
     if (r == 0) {
