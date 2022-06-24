@@ -24,3 +24,15 @@
 //   printf("Min is %d. Max is %d. Sum is %d", min, max, sum);
 //
 // }
+
+
+/* save "Good time" in an char array */
+
+int main(void)
+{
+  char arr[] = {'G', 'o', 'o', 'd', ' ', 't', 'i', 'm', 'e'};
+  int arlen = sizeof(arr) / sizeof(char); // lenght of array
+  for (int i = 0; i < arlen; i++){
+    printf("%c", arr[i]);
+  }
+}
