@@ -27,4 +27,25 @@ int main(void)
 
   int arr3[5] = {1,2}; // Method 3 (rest are filled with 0)
 
+  int ar1len = sizeof(arr) / sizeof(int); // size of arr1 = 5*4 since sizeof(int)=4
+  int ar2len = sizeof(arr2) / sizeof(int); // This is how you get len(array)
+  int ar3len = sizeof(arr3) / sizeof(int);
+
+  for (int i=0; i<ar1len; i++){
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+
+  for (int i=0; i<ar2len; i++){
+    printf("%d ", arr2[i]);
+  }
+  printf("\n");
+
+  for (int i=0; i<ar3len; i++){
+    printf("%d ", arr3[i]);
+  }
+  printf("\n");
+  return 0;
+
+
 }
