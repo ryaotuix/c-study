@@ -1,4 +1,4 @@
-/* pointer for int(which has 4 byte) an be 4 byte (for 32bit system) and also 8 byte (for 64bit system) */
+/* pointer for int(which has 4 byte) can be 4 byte (for 32bit system) and also 8 byte (for 64bit system) */
 
 #include <stdio.h>
 
@@ -7,8 +7,8 @@ int main(void)
 {
   int num = 7;
   int * pnum;
-  pnum = &num;
-  printf("Size of pnum : %d", sizeof(pnum));
+  pnum = &num; // pnum indicates the memory location of num
+  printf("Size of pnum : %d", sizeof(pnum)); // my comp is 64bit so size of pointer is 8
   return 0;
 }
 

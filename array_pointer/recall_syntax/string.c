@@ -7,12 +7,12 @@ int main(void)
   char emp = ' '; // HOw you save empty character (ASCII = 32)
 
   char str[] = "Good morning!";
-  printf("Size of str[] = %d\n", sizeof(str));
+  printf("Size of str[] = %d\n", sizeof(str)); // size = 14
   printf("Print null char = %c\n", str[13]); // null has no char
   printf("Print null int = %d\n", str[13]); // null ASCII = 0
 
   str[12] = '?'; // YOu can change string
-  printf("Print string : %s\n", str);
+  printf("Print string : %s\n", str); // no need to use &str
   return 0;
 }
 
