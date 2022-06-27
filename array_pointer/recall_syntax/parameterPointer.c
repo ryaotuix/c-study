@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-void ShowArrayElem(int * param, int len)
+void ShowArrayElem(int * param, int len) // (int param[]) can be used as well
+// WE CANNOT CALCULATE 'LEN' IN FUNCTION because parameter 'param' is a pointer
+// if we use int sz = sizeof(param), the size of pointer is saved in sz
 {
   for(int i=0; i<len; i++){
     printf("%d ", param[i]);
@@ -34,5 +36,5 @@ int main(void)
   AddArrayElem(arr2, ar2len, add);
   ShowArrayElem(arr1, ar1len);
   ShowArrayElem(&arr2[0], ar2len);
-
+  return 0;
 }
