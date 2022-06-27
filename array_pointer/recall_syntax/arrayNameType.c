@@ -6,6 +6,7 @@ int main(void)
   printf("name of array : %p\n", arr); // %p prints address
   printf("first element: %p\n", &arr[0]);
   printf("second element: %p\n", &arr[1]);
+  printf("second element: %p\n", arr+1);
   printf("third element: %p\n", &arr[2]);
 }
 
