@@ -6,7 +6,8 @@ int main(void)
   char null = '\0'; // How you save null character (ASCII = 0)
   char emp = ' '; // HOw you save empty character (ASCII = 32)
 
-  char str[] = "Good morning!";
+  char str[] = "Good morning!"; // cannot be changed
+  char * str2 = "Good morning!" // can change
   printf("Size of str[] = %d\n", sizeof(str)); // size = 14
   printf("Print null char = %c\n", str[13]); // null has no char
   printf("Print null int = %d\n", str[13]); // null ASCII = 0
