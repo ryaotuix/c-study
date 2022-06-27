@@ -52,4 +52,27 @@ int main(void)
 }
 */
 
-/* Task 4:
+/* Task 4: initiate int array length of 6 and switch order. Use two pointers indicating the first and the last element */
+int main(void)
+{
+  int arr[6] = {1,2,3,4,5,6};
+  int len = sizeof(arr) / sizeof(int);
+  int * front = arr; // same as &arr[0]
+  int * end = &arr[len-1];
+
+  for(int i=0; i<len; i++){
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+
+  // switch order without changing pointer value
+  for(int i=0; i<len/2; i++){
+    int temp = *(front+i);
+    *(front+i) = *(end-i);
+    *(end-i) = temp;
+  }
+
+  for(int i=0; i<len; i++){
+    printf("%d ", arr[i]);
+  }
+}
