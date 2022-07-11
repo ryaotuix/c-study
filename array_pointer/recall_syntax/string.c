@@ -7,13 +7,16 @@ int main(void)
   char emp = ' '; // HOw you save empty character (ASCII = 32)
 
   char str[] = "Good morning!"; // cannot be changed
-  char * str2 = "Good morning!" // can change
+  char * str2 = "Good morning!"; // can change
   printf("Size of str[] = %d\n", sizeof(str)); // size = 14
   printf("Print null char = %c\n", str[13]); // null has no char
   printf("Print null int = %d\n", str[13]); // null ASCII = 0
 
   str[12] = '?'; // YOu can change string
+
   printf("Print string : %s\n", str); // no need to use &str
+  // str2[12] = '?'; CANT DO THIS
+  printf("Print string : %s\n", str2);
   return 0;
 }
 

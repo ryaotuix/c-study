@@ -27,7 +27,13 @@ void PrintEven(const int * arr, int len)
 
 int main(void)
 {
-  int intarray[] = {1,2,3,4,5,6,7,8,9};
+  int intarray[10] = {};
+  for (int i=0; i<10; i++){
+    int input;
+    printf("Enter an int: ");
+    scanf("%d", &input);
+    intarray[i] = input;
+  }
   int len = sizeof(intarray) / sizeof(int);
   PrintOdd(intarray, len);
   PrintEven(intarray, len);
