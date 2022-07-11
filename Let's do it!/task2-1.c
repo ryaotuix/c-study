@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 void PrintOdd(const int * arr, int len)
+// when const is in front of a pointer it prevents changing element of array by pointer
 {
   printf("Odd elemets are: ");
 
@@ -33,6 +34,7 @@ int main(void)
     printf("Enter an int: ");
     scanf("%d", &input);
     intarray[i] = input;
+    // same as *(intarray+i)
   }
   int len = sizeof(intarray) / sizeof(int);
   PrintOdd(intarray, len);

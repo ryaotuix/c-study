@@ -69,8 +69,3 @@ int main(void)
   BinaryRecursion(i);
   // ToBinary(i);
 }
-
-/* First algorithm: subtract 1, 2, 4, 8 .. and store 1 or 0 in the string
-then swithc the order */
-
-/* Second algorithm: */
