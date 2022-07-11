@@ -6,8 +6,14 @@
 int main(void)
 {
   int num = 7;
+  int num2 = 10;
   int * pnum;
   pnum = &num; // pnum indicates the memory location of num
+  printf("pnum is %d\n", *pnum);
+
+  pnum = &num2;
+  printf("pnum is %d\n", *pnum);
+
   printf("Size of pnum : %d", sizeof(pnum)); // my comp is 64bit so size of pointer is 8
   return 0;
 }
