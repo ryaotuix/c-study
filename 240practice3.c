@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
 void printArray(int arr[], int size)
 {
     int i;
@@ -43,4 +44,35 @@ int main() {
   for (int i=0; i<len; i++) {
     printf("%d, ", arr[i]);
   }
+}
+*/
+
+
+unsigned int countWord(const char *str, unsigned int length) {
+  int i =0;
+  int inWord = 0; // False initially
+  int countlength = 0;
+  int wordCount = 0;
+  while(str[i] != '\0') {
+    if ((str[i] != ' ') && (str[i] != '\t') && (str[i] != '\n')) { // if it is part of word.
+      countlength++;
+      inWord = 1;
+    } else { // if it is white space
+      if ((inWord ==1) && (countlength<=length))
+        wordCount++;
+      countlength = 0;
+      inWord = 0;
+    }
+    i++;
+  }
+
+  if ((str[i] == '\0') && (inWord == 1) && (countlength <= length))
+    wordCount++;
+
+  return wordCount;
+}
+
+int main() {
+  char str[100] = " hello this is my brosksiss ";
+  printf("%d", countWord(str, 5));
 }
