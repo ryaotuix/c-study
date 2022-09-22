@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 /*
 int mystrcmp(const char *s1, const char *s2) {
   int i = 0;
@@ -121,6 +121,8 @@ int main() {
 }
 */
 
+
+/*
 int mystrrchr(const char *s, int c) {
   int index = -1;
   int len = sizeof(s)/sizeof(char);
@@ -137,4 +139,84 @@ int main() {
   char c = '!';
   int index = mystrrchr(s, (int)c);
   printf("%d",index);
+}
+*/
+
+
+void toLowerStr(char *s) {
+  for (int i=0; s[i] != '\0'; i++) {
+    if ((s[i]>'A') && (s[i]<'Z')) {
+      s[i] = s[i] + 32;
+    }
+  }
+}
+
+void toUpperStr(char *s) {
+  for (int i=0; s[i] != '\0'; i++) {
+    if ((s[i]>'a') && (s[i]<'z')) {
+      s[i] = s[i] - 32;
+    }
+  }
+}
+
+void reverseStr(char *s) {
+
+  int len =  0;
+  while (s[len] != '\0') {
+    len++;
+  }
+  len--;
+
+  for (int i=0; i<=len/2; i++) {
+    char temp = s[len-i]; // save back letter in temp
+    s[len-i] = s[i]; // back letter becomes the front one
+    s[i] = temp; // front letter becomes the back one
+  }
+}
+
+#define ASCII_SIZE 256
+
+char strfreq(const char *s) {
+  int count[ASCII_SIZE] = {0}; // initailize array size of 256 and fill with 0s
+
+  char max = s[0];
+  int maxCount = 0;
+
+
+  // add all counts
+  for (int i=0; s[i] != '\0'; i++) {
+    count[(int)s[i]]++;
+    if (count[(int)s[i]] > maxCount) {
+      max = (char)s[i];
+      maxCount = count[(int)max];
+    } else if(count[(int)s[i]] == maxCount) {
+      max = (max < s[i]) ? (char)max : (char)s[i];
+      maxCount = count[(int)max];
+    }
+    printf("%c\n", max);
+  }
+
+  return max;
+}
+
+
+
+int main() {
+
+  /*
+  char s[1000];
+  strcpy(s, "SexY mE!");
+  printf("%s\n", s);
+  toLowerStr(s);
+  printf("%s\n", s);
+  toUpperStr(s);
+  printf("%s\n", s);
+  reverseStr(s);
+  printf("%s\n", s);
+  */
+
+  const char s[1000] ="ayaayyy";
+  char c = strfreq(s);
+  printf("\n\n%c\n", c);
+
 }
