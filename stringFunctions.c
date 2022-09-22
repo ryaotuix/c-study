@@ -34,6 +34,7 @@ int main() {
   printf("%d\n", res2); // expected -1
 */
 
+/*
 int mystrchr(const char *s, int c) {
   int i = 0;
   while (s[i] != '\0') {
@@ -55,4 +56,22 @@ int main() {
   char cs = '\0';
   int c = (int)cs;
   printf("%d\n", mystrchr(s, c));
+}
+*/
+
+char  *mystrcpy(char *dest, const char *src) {
+  int i = 0;
+  while (src[i] != '\0') {
+    dest[i] = src[i];
+    i++;
+  }
+  dest[i] = '\0';
+  return dest;
+}
+
+int main() {
+  const char *src = "hello!";
+  char *dest = (char*)malloc(sizeof(char)*1000);
+  dest = mystrcpy(dest, src);
+  printf("%s", dest);
 }
