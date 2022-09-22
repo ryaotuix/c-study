@@ -34,6 +34,39 @@ int gcd(int num1, int num2) {
   return 1;
 }
 
+int isIn(int a, int *arr, int len) {
+  int flag = 0;
+  for (int i=0; i<len; i++) {
+    if (arr[i]==a) {
+      flag = 1; // if it is in
+    }
+  }
+  return flag;
+}
+
+
+int *commonValues(int *A, int *B, int lenA, int lenB, int *N) {
+  int i;
+  int flag = 0;
+  int j = 0;
+  for (i=0; i<lenB; i++) {
+    int inA  =isIn(B[i], A, lenA);
+    if (inA == 1) {
+      N[j] = B[i];
+      flag =1;
+      j++;
+    }
+  }
+  if(flag==0){
+    printf("No common\n");
+    exit(1);
+  }
+  return N;
+}
+
+// int minDiff(int *A, int *B, int lenA, int lenB) {
+//
+// }
 
 
 int main(){
@@ -42,6 +75,17 @@ int main(){
   // for (int i=0; i<2; i++) {
   //   printf("%d, ", res[i]);
   // }
+  int A[5] = {1,2,3,4,5};
+  int B[6] = {6,7,8,9,10,11};
+  int lenA = 5;
+  int lenB = 6;
+  int * N = (int*)malloc(sizeof(int)*lenB);
+
+  int * res = commonValues(A, B, lenA, lenB, N);
+  int lenN = sizeof(N)/sizeof(int);
+  for (int i=0; i<lenN; i++){
+    printf("%d, ", N[i]);
+  }
 
   int num1 = 2;
   int num2 = 3;
