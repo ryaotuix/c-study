@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+
 /*
 int mystrcmp(const char *s1, const char *s2) {
   int i = 0;
@@ -143,6 +143,7 @@ int main() {
 */
 
 
+/*
 void toLowerStr(char *s) {
   for (int i=0; s[i] != '\0'; i++) {
     if ((s[i]>'A') && (s[i]<'Z')) {
@@ -203,7 +204,7 @@ char strfreq(const char *s) {
 
 int main() {
 
-  /*
+
   char s[1000];
   strcpy(s, "SexY mE!");
   printf("%s\n", s);
@@ -213,10 +214,53 @@ int main() {
   printf("%s\n", s);
   reverseStr(s);
   printf("%s\n", s);
-  */
+
 
   const char s[1000] ="ayaayyy";
   char c = strfreq(s);
   printf("\n\n%c\n", c);
+}
+*/
 
+
+
+
+
+
+
+char res[1000];
+
+int isIn (const char* s, int len, const char c) {
+  int flag = 0; // False
+  for (int i=0; i<len; i++) {
+    if (s[i]==c) {
+      flag = 1;
+      break;
+    }
+  }
+  return flag;
+}
+
+char *delChars(const char *s1, const char *s2) {
+  int len2 = 0;
+  for (int i=0; s2[i] != '\0'; i++) {
+    len2++;
+  }
+
+  int i = 0;
+  int ind = 0;
+  while(s1[i] != '\0') {
+    if (isIn(s2, len2, s1[i])==0) {
+      res[ind++] = s1[i];
+    }
+    i++;
+  }
+  res[ind] = '\0';
+
+  return res;
+}
+
+
+int main() {
+  printf("%s\n", delChars("Hello World", "Said George"));  // returns "HllWl"
 }
