@@ -120,3 +120,21 @@ int main() {
   printf("%d", a);
 }
 */
+
+int mystrrchr(const char *s, int c) {
+  int index = -1;
+  int len = sizeof(s)/sizeof(char);
+  for (int i = len; i>-1; i--) {
+    if (s[i] == (char)c) {
+      return i;
+    }
+  }
+  return index;
+}
+
+int main() {
+  const char *s = "this is me";
+  char c = '!';
+  int index = mystrrchr(s, (int)c);
+  printf("%d",index);
+}
