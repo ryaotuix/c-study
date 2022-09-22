@@ -18,7 +18,7 @@
 // }
 
 
-
+/*
 int gcd(int num1, int num2) {
   int smaller;
   if (num1<num2) {
@@ -90,4 +90,37 @@ int main(){
   int num1 = 2;
   int num2 = 3;
   printf("%d\n", gcd(num1, num2));
+}
+*/
+
+int abs(int a){
+  if (a<0)
+    a *= -1;
+  return a;
+}
+
+
+int minDiff(int *A, int *B, int lenA, int lenB) {
+  int minimum = abs(A[0]-B[0]);
+  int i, j;
+  for (i=0; i<lenA; i++) {
+    for (j=0; j<lenB; j++) {
+      int compare = abs(A[i]-B[j]);
+      if (compare<minimum)
+        minimum = compare;
+    }
+  }
+
+  return minimum;
+}
+
+
+
+
+int main(){
+  int A[5] = {1,2,3,4,5};
+  int B[6] = {10,11,13,-1,10,10};
+  int mindif = minDiff(A, B, 5, 6);
+  printf("%d\n", mindif);
+
 }
