@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
 int mystrcmp(const char *s1, const char *s2) {
   int i = 0;
   while ((s1[i] != '\0') && (s2[i] != '\0')) {
@@ -31,5 +32,27 @@ int main() {
 
   printf("%d\n", res); // expected -1
   printf("%d\n", res2); // expected -1
+*/
 
+int mystrchr(const char *s, int c) {
+  int i = 0;
+  while (s[i] != '\0') {
+    if ((char)c == s[i]) {
+      return i;
+    }
+    i++;
+  }
+  // check for the case where c is '\0'
+  if ((char)c == s[i]) {
+    return i;
+  }
+
+  return -1;
+}
+
+int main() {
+  const char *s = "hello!";
+  char cs = '\0';
+  int c = (int)cs;
+  printf("%d\n", mystrchr(s, c));
 }
